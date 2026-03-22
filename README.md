@@ -1,4 +1,20 @@
-# Ordinary Neural Circuits
+# ONC-RL
+
+Reinforcement learning experiments with Ordinary Neural Circuits for COMP579.
+
+## Team
+- Daniele Comitogianni
+- Elizabeth Kourbatski
+- Jason Omer
+
+## Overview
+This repository explores Ordinary Neural Circuits in reinforcement learning and extends the original codebase for a course project.
+
+## Acknowledgment
+This project is based on the original repository:
+https://github.com/raminmh/ordinary-neural-circuits
+
+
 
 ## How to get it working:
 - First you need to install the Reinforcement Learning environments: [Open-AI Gym](https://gym.openai.com/) [Roboschool](https://github.com/openai/roboschool) and [mujoco-py](https://github.com/openai/mujoco-py)
