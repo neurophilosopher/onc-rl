@@ -1,5 +1,6 @@
 # from OpenGL import GLU
 import gymnasium as gym
+import imageio.v2 as imageio
 import numpy as np
 import random as rng
 from PIL import Image,ImageDraw
@@ -17,10 +18,12 @@ if PYBNN_DIR not in sys.path:
 import pybnn
 
 class TWsearchEnv:
-    def __init__(self,env,filter_len, mean_len):
+    def __init__(self,env,filter_len, mean_len, record_video=None):
         self.env = env
         self.filter_len = filter_len
         self.mean_len=mean_len
+        self.record_video = record_video
+        self.video_writer = None
 
     def TensorRGBToImage(self,tensor):
         new_im = Image.new("RGB",(tensor.shape[1],tensor.shape[0]))
@@ -51,6 +54,24 @@ class TWsearchEnv:
         actions = np.dot(action,self.w_out)
         return actions
 
+    def render_frame(self):
+        frame = self.env.render()
+        renderer = getattr(self.env.unwrapped, "mujoco_renderer", None)
+        if renderer is not None:
+            viewer = renderer._viewers.get(self.env.render_mode)
+            if viewer is not None:
+                torso_id = self.env.unwrapped.model.body("torso").id
+                torso_pos = self.env.unwrapped.data.xpos[torso_id]
+                cam = viewer.cam
+                cam.lookat[0] = float(torso_pos[0])
+                cam.lookat[1] = float(torso_pos[1])
+                cam.lookat[2] = 0.6
+                cam.distance = 5.0
+                cam.azimuth = 120.0
+                cam.elevation = -12.0
+                frame = self.env.render()
+        return frame
+
     def run_one_episode(self,do_render=False):
         total_reward = 0
         obs, _ = self.env.reset()
@@ -58,6 +79,8 @@ class TWsearchEnv:
         if(do_render):
             rewardlog = open('rewardlog.log','w')
             self.lif.DumpClear('lif-dump.csv')
+            if self.record_video and self.video_writer is None:
+                self.video_writer = imageio.get_writer(self.record_video, fps=60)
 
         observations = []
         for i in range(0,2):
@@ -100,7 +123,9 @@ class TWsearchEnv:
                 rewardlog.write(str(total_reward)+'\n')
                 rewardlog.flush()
                 self.lif.DumpState('lif-dump.csv')
-                self.env.render()
+                frame = self.render_frame()
+                if self.video_writer is not None:
+                    self.video_writer.append_data(frame)
                 # screen = env.render(mode='rgb_array')
                 # print('Img shape: '+str(screen.shape))
                 # pic = TensorRGBToImage(screen)
@@ -333,8 +358,12 @@ class TWsearchEnv:
             os.makedirs('vid')
         print('Average Reward: '+str(self.evaluate_avg()))
         print('Replay Return: '+str(self.run_multiple_episodes()))
-
-        self.run_one_episode(True)
+        try:
+            self.run_one_episode(True)
+        finally:
+            if self.video_writer is not None:
+                self.video_writer.close()
+                self.video_writer = None
 
 
     def replay_arg(self):
@@ -394,14 +423,17 @@ def demo_run():
     parser.add_argument('--file',default="tw_pure.bnn")
     parser.add_argument('--optimize',action="store_true")
     parser.add_argument('--id',default="0")
+    parser.add_argument('--record-video')
     args = parser.parse_args()
 
     render_mode = None if args.optimize else "human"
+    if args.record_video:
+        render_mode = "rgb_array"
     env = gym.make("HalfCheetah-v5", render_mode=render_mode)
     # print('Observation space: '+str(env.observation_space.shape[0]))
     # print('Action space: '+str(env.action_space.shape[0]))
 
-    twenv = TWsearchEnv(env,args.filter,args.mean)
+    twenv = TWsearchEnv(env,args.filter,args.mean,args.record_video)
     if(args.optimize):
         print("Optimize")
         twenv.optimize_and_store(str(args.id),args.file)
