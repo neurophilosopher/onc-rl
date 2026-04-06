@@ -1,8 +1,6 @@
 # from OpenGL import GLU
-import gym, roboschool
-from gym import wrappers
+import gymnasium as gym
 import numpy as np
-import pybnn
 import random as rng
 from PIL import Image,ImageDraw
 import datetime
@@ -10,6 +8,13 @@ import sys
 import os
 import argparse
 import numpy as np
+
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+PYBNN_DIR = os.path.normpath(os.path.join(CURRENT_DIR, "..", "pybnn", "bin"))
+if PYBNN_DIR not in sys.path:
+    sys.path.insert(0, PYBNN_DIR)
+
+import pybnn
 
 class TWsearchEnv:
     def __init__(self,env,filter_len, mean_len):
@@ -48,7 +53,7 @@ class TWsearchEnv:
 
     def run_one_episode(self,do_render=False):
         total_reward = 0
-        obs = self.env.reset()
+        obs, _ = self.env.reset()
         self.lif.Reset()
         if(do_render):
             rewardlog = open('rewardlog.log','w')
@@ -76,7 +81,7 @@ class TWsearchEnv:
             actions = self.post_process_action(action)
             if(do_render):
                 print('T/R: '+str(time)+', '+str(total_reward)+': '+str(obs[1])+', '+str(obs[4])+', '+str(np.arcsin(float(obs[3]))))
-            obs, r, done, info = self.env.step(actions)
+            obs, r, terminated, truncated, info = self.env.step(actions)
             self.set_observations_for_lif(obs,observations)
 
             # if(not done2 and do_render):
@@ -105,7 +110,7 @@ class TWsearchEnv:
 
                 if(time >= 16.5):
                     return
-            elif(done):
+            elif(terminated or truncated):
                 break
             i+=1
         # print('Return: '+str(total_reward))
@@ -383,10 +388,6 @@ class TWsearchEnv:
         self.store_tw(outfile)
 
 def demo_run():
-    env = gym.make("HalfCheetah-v2")
-    # print('Observation space: '+str(env.observation_space.shape[0]))
-    # print('Action space: '+str(env.action_space.shape[0]))
-
     parser = argparse.ArgumentParser()
     parser.add_argument('--filter',default=10,type=int)
     parser.add_argument('--mean',default=5,type=int)
@@ -394,6 +395,11 @@ def demo_run():
     parser.add_argument('--optimize',action="store_true")
     parser.add_argument('--id',default="0")
     args = parser.parse_args()
+
+    render_mode = None if args.optimize else "human"
+    env = gym.make("HalfCheetah-v5", render_mode=render_mode)
+    # print('Observation space: '+str(env.observation_space.shape[0]))
+    # print('Action space: '+str(env.action_space.shape[0]))
 
     twenv = TWsearchEnv(env,args.filter,args.mean)
     if(args.optimize):

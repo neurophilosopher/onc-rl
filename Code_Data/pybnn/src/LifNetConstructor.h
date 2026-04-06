@@ -3,7 +3,6 @@
 
 #include "neural_net_serializer.h"
 #include "neural_network.h"
-#include <boost/python.hpp>
 #include <string>
 
 class LifNetConstructor {

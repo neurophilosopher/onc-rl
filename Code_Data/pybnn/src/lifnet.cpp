@@ -1,5 +1,6 @@
 #include "lifnet.h"
 #include <fstream>
+#include <stdexcept>
 LifNet::LifNet(std::string filename) {
   NeuralNetSerializer deserializer(filename);
   nn = deserializer.Deserialize();
@@ -67,9 +68,13 @@ void LifNet::DumpClear(std::string filename) {
   file << std::endl;
   file.close();
 }
-boost::python::list LifNet::Update(boost::python::list &inputsArr, float deltaT,
-                                   int simulationSteps) {
-  boost::python::list a;
+std::vector<float> LifNet::Update(const std::vector<float> &inputsArr,
+                                  float deltaT, int simulationSteps) {
+  std::vector<float> a;
+  const size_t expected_inputs = inputs.size() + biInputs.size();
+  if (inputsArr.size() < expected_inputs) {
+    throw std::invalid_argument("Update received fewer inputs than expected");
+  }
 
   for (int step = 0; step < simulationSteps; step++) {
     // if (totalTime < 0.1f) {
@@ -78,12 +83,12 @@ boost::python::list LifNet::Update(boost::python::list &inputsArr, float deltaT,
     totalTime += deltaT;
     unsigned int listPtr = 0;
     for (unsigned int i = 0; i < inputs.size(); i++) {
-      inputs[i].SetValue(boost::python::extract<float>(inputsArr[listPtr]));
+      inputs[i].SetValue(inputsArr[listPtr]);
       inputs[i].Sync(*nn);
       listPtr++;
     }
     for (unsigned int i = 0; i < biInputs.size(); i++) {
-      biInputs[i].SetValue(boost::python::extract<float>(inputsArr[listPtr]));
+      biInputs[i].SetValue(inputsArr[listPtr]);
       biInputs[i].Sync(*nn);
       listPtr++;
     }
@@ -91,11 +96,11 @@ boost::python::list LifNet::Update(boost::python::list &inputsArr, float deltaT,
   }
   for (unsigned int i = 0; i < outputs.size(); i++) {
     outputs[i].Sync(*nn);
-    a.append(outputs[i].GetValue());
+    a.push_back(outputs[i].GetValue());
   }
   for (unsigned int i = 0; i < biOutputs.size(); i++) {
     biOutputs[i].Sync(*nn);
-    a.append(biOutputs[i].GetValue());
+    a.push_back(biOutputs[i].GetValue());
   }
   return a;
 }
