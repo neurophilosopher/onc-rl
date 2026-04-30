@@ -1,0 +1,7 @@
+Projected ONC input ranges during replay
+input_0_min: -47.80370526532255
+input_0_max: 38.58559980352921
+input_0_mean: -1.0996875731610218
+input_1_min: -49.15846914987893
+input_1_max: 60.49386283509541
+input_1_mean: -2.8641857852577166

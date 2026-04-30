@@ -9,6 +9,8 @@ import sys
 import os
 import argparse
 import numpy as np
+import matplotlib.pyplot as plt
+import subprocess
 
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 PYBNN_DIR = os.path.normpath(os.path.join(CURRENT_DIR, "..", "pybnn", "bin"))
@@ -18,12 +20,13 @@ if PYBNN_DIR not in sys.path:
 import pybnn
 
 class TWsearchEnv:
-    def __init__(self,env,filter_len, mean_len, record_video=None):
+    def __init__(self,env,filter_len, mean_len, record_video=None, partial_obs=False):
         self.env = env
         self.filter_len = filter_len
         self.mean_len=mean_len
         self.record_video = record_video
         self.video_writer = None
+        self.partial_obs = partial_obs
 
     def TensorRGBToImage(self,tensor):
         new_im = Image.new("RGB",(tensor.shape[1],tensor.shape[0]))
@@ -38,13 +41,21 @@ class TWsearchEnv:
         return new_im
 
     def input_size(self):
+        if self.partial_obs:
+            return 8
         return int(self.env.observation_space.shape[0])
 
     def output_size(self):
         return int(self.env.action_space.shape[0])
 
+    def get_observation_slice(self, obs):
+        if self.partial_obs:
+            return obs[:8]
+        return obs
+
     def set_observations_for_lif(self,obs,observations):
-        v = np.dot(obs,self.w_in)
+        obs_slice = self.get_observation_slice(obs)
+        v = np.dot(obs_slice,self.w_in)
 
         observations[0] = float(v[0])
         observations[1] = float(obs[1])
@@ -184,6 +195,10 @@ class TWsearchEnv:
             nd = np.load(aux_files)
             self.w_in = nd["w_in"]
             self.w_out = nd["w_out"]
+            if self.w_in.shape != (self.input_size(), 2):
+                self.w_in = np.random.normal(0,1,size=[self.input_size(),2])
+            if self.w_out.shape != (2, self.output_size()):
+                self.w_out = np.random.normal(0,1,size=[2, self.output_size()])
         else:
             self.w_in = np.random.normal(0,1,size=[self.input_size(),2])
             self.w_out = np.random.normal(0,1,size=[2, self.output_size()])
@@ -221,7 +236,7 @@ class TWsearchEnv:
         starttime = datetime.datetime.now()
         endtime = starttime + ts
         steps=-1
-        log_freq=250
+        log_freq=50 # Changed from 250 to 50 to log more frequently, especially in the early stages of optimization
         while endtime>datetime.datetime.now() and steps < max_steps:
             steps+=1
 
@@ -381,7 +396,7 @@ class TWsearchEnv:
 
     def optimize_and_store(self,worker_id,in_file='tw_pure.bnn'):
         self.load_tw(in_file)
-
+        
         if(worker_id.isdigit()):
             seed = int(worker_id)+20*datetime.datetime.now().microsecond+23115
         else:
@@ -415,6 +430,123 @@ class TWsearchEnv:
         outfile = store_path+'/tw-optimized_'+worker_id+ '.bnn'
 
         self.store_tw(outfile)
+    
+    def optimize_and_store_experiment(self, seed, in_file='tw_pure.bnn', experiment_name='experiment'):
+        self.load_tw(in_file)
+        
+        self.lif.SeedRandomNumberGenerator(seed)
+        rng.seed(seed)
+        np.random.seed(seed)
+        self.env.reset(seed=seed)
+        self.env.action_space.seed(seed)
+
+        root_path = os.path.join(CURRENT_DIR, 'results', experiment_name)
+        os.makedirs(root_path, exist_ok=True)
+
+        log_file = root_path + '/textlog_' + str(seed) + '.log'
+        csv_log = root_path + '/csvlog_' + str(seed) + '.log'
+        self.logfile = open(log_file, 'w')
+        self.csvlogfile = open(csv_log, 'w')
+
+        try:
+            print('Begin Return of ' + str(seed) + ': ' + str(self.run_multiple_episodes()))
+            self.optimize(ts=datetime.timedelta(hours=6), max_steps=20000)
+            print('End Return of ' + str(seed) + ': ' + str(self.run_multiple_episodes()))
+
+            outfile = root_path + '/tw-optimized_' + str(seed) + '.bnn'
+            self.store_tw(outfile)
+        finally:
+            if self.logfile is not None:
+                self.logfile.close()
+                self.logfile = None
+            if self.csvlogfile is not None:
+                self.csvlogfile.close()
+                self.csvlogfile = None
+
+
+
+def experiment(partial_obs=False):
+    seeds = [0,1,2,3,4]
+    filter_len = 10
+    mean_len = 5
+    experiment_name = 'experiment_partial' if partial_obs else 'experiment_full'
+    root_path = os.path.join(CURRENT_DIR, 'results', experiment_name)
+
+    os.makedirs(root_path, exist_ok=True)
+
+    processes = []
+    for seed in seeds:
+        print('Starting run with seed: ' + str(seed))
+        cmd = [
+            sys.executable,
+            os.path.abspath(__file__),
+            '--experiment-seed', str(seed),
+            '--filter', str(filter_len),
+            '--mean', str(mean_len),
+        ]
+        if partial_obs:
+            cmd.append('--partial-obs')
+        processes.append((seed, subprocess.Popen(cmd, cwd=os.path.dirname(os.path.abspath(__file__)))))
+
+    for seed, process in processes:
+        return_code = process.wait()
+        if return_code != 0:
+            raise RuntimeError('Experiment run failed for seed {} with exit code {}'.format(seed, return_code))
+
+    curves = []
+    steps = None
+
+    for seed in seeds:
+        csv_path = root_path + '/csvlog_' + str(seed) + '.log'
+        current_steps = []
+        eval_returns = []
+        with open(csv_path, 'r') as handle:
+            for line in handle:
+                parts = line.strip().split(';')
+                if len(parts) < 2:
+                    continue
+                current_steps.append(int(parts[0]))
+                eval_returns.append(float(parts[1]))
+        if steps is None:
+            steps = current_steps
+        elif steps != current_steps:
+            raise ValueError('CSV logs do not share the same checkpoints.')
+        curves.append(eval_returns)
+
+    curve_array = np.array(curves)
+    mean_values = np.mean(curve_array, axis=0)
+    std_values = np.std(curve_array, axis=0)
+    output_path = root_path + '/experiment_mean_return.png'
+    plt.figure(figsize=(8, 5))
+    plt.plot(steps, mean_values, label='Average over {} seeds'.format(len(seeds)))
+    plt.fill_between(steps, mean_values - std_values, mean_values + std_values, alpha=0.25)
+    plt.xlabel('Search iterations')
+    plt.ylabel('Mean return over 50 eval episodes')
+    if partial_obs:
+        plt.title('HalfCheetah with Partial Obs. - ONC with ARS')
+    else:
+        plt.title('HalfCheetah - ONC with ARS')
+    plt.grid(True, alpha=0.3)
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig(output_path, dpi=200)
+    plt.close()
+
+    final_returns = curve_array[:, -1]
+    print('Final eval return: {:.1f} +- {:.1f}'.format(np.mean(final_returns), np.std(final_returns)))
+    print('Saved experiment plot to ' + output_path)
+
+    summary_path = root_path + '/final_return_summary.txt'
+    with open(summary_path, 'w') as handle:
+        handle.write('Experiment: ' + experiment_name + '\n')
+        handle.write('Metric: final avg_cost from each csvlog (mean return over 50 eval episodes)\n\n')
+        for seed, value in zip(seeds, final_returns):
+            handle.write('Seed {}: {}\n'.format(seed, value))
+        handle.write('\n')
+        handle.write('Final mean return: {:.6f}\n'.format(np.mean(final_returns)))
+        handle.write('Final std return: {:.6f}\n'.format(np.std(final_returns)))
+        handle.write('Final mean +- std: {:.1f} +- {:.1f}\n'.format(np.mean(final_returns), np.std(final_returns)))
+
 
 def demo_run():
     parser = argparse.ArgumentParser()
@@ -441,5 +573,31 @@ def demo_run():
         print("Replay")
         twenv.replay(args.file)
 
-if __name__=="__main__":
-    demo_run()
+
+if __name__ == "__main__":
+    if '--experiment-seed' in sys.argv:
+        seed_index = sys.argv.index('--experiment-seed')
+        seed = int(sys.argv[seed_index + 1])
+        partial_obs = '--partial-obs' in sys.argv
+        filter_len = 10
+        mean_len = 5
+        if '--filter' in sys.argv:
+            filter_index = sys.argv.index('--filter')
+            filter_len = int(sys.argv[filter_index + 1])
+        if '--mean' in sys.argv:
+            mean_index = sys.argv.index('--mean')
+            mean_len = int(sys.argv[mean_index + 1])
+
+        env = gym.make("HalfCheetah-v5", render_mode=None)
+        twenv = TWsearchEnv(env, filter_len, mean_len, partial_obs=partial_obs)
+        try:
+            experiment_name = 'experiment_partial' if partial_obs else 'experiment_full'
+            twenv.optimize_and_store_experiment(seed, experiment_name=experiment_name)
+        finally:
+            env.close()
+    elif '--experiment_full' in sys.argv:
+        experiment()
+    elif '--experiment_partial' in sys.argv:
+        experiment(partial_obs=True)
+    else:
+        demo_run()

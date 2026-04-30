@@ -1,0 +1,12 @@
+Experiment: experiment_full
+Metric: final avg_cost from each csvlog (mean return over 50 eval episodes)
+
+Seed 0: 1199.9695240098447
+Seed 1: 1199.9553045591933
+Seed 2: 1199.9567094434794
+Seed 3: 1177.1208330287209
+Seed 4: 1154.2145436222056
+
+Final mean return: 1186.243383
+Final std return: 18.295062
+Final mean +- std: 1186.2 +- 18.3

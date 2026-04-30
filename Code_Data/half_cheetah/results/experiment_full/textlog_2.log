@@ -1,0 +1,433 @@
+Improvement after: 5 steps, with return -372.010239921172, Elapsed: 4.644751
+Improvement after: 6 steps, with return -198.54733089619685, Elapsed: 5.120148
+Improvement after: 8 steps, with return -39.73805391049854, Elapsed: 5.969176
+Improvement after: 49 steps, with return -23.650788641310694, Elapsed: 24.322371
+Improvement after: 79 steps, with return -23.36629463046297, Elapsed: 38.938664
+Improvement after: 80 steps, with return -12.435401114901534, Elapsed: 39.33401
+Improvement after: 84 steps, with return 119.95547558258139, Elapsed: 40.969012
+Improvement after: 95 steps, with return 202.79912357669923, Elapsed: 45.81492
+Improvement after: 98 steps, with return 657.7726653370079, Elapsed: 47.047158
+Reevaluate after: 149 steps, with return -339.4369020470849
+Reevaluate after: 200 steps, with return -326.4199721333508
+Improvement after: 206 steps, with return 799.263948749895, Elapsed: 97.734095
+Improvement after: 252 steps, with return 886.0112947358368, Elapsed: 118.403188
+Reevaluate after: 303 steps, with return -626.4749739111663
+Reevaluate after: 354 steps, with return -82.32620766759973
+Reevaluate after: 405 steps, with return -28.405705987821914
+Improvement after: 406 steps, with return 986.6792503194614, Elapsed: 188.599618
+Improvement after: 409 steps, with return 1105.0123997411329, Elapsed: 189.787742
+Improvement after: 415 steps, with return 1334.2771705627883, Elapsed: 192.152992
+Improvement after: 419 steps, with return 1369.3994770405739, Elapsed: 193.726358
+Improvement after: 423 steps, with return 1937.6853273563556, Elapsed: 195.282006
+Improvement after: 424 steps, with return 2199.7938814218846, Elapsed: 195.642805
+Reevaluate after: 475 steps, with return 290.21593976287824
+Reevaluate after: 526 steps, with return -187.2442792211868
+Reevaluate after: 577 steps, with return -19.873462729928292
+Reevaluate after: 628 steps, with return -928.0771767854628
+Reevaluate after: 679 steps, with return -420.11883268578674
+Improvement after: 702 steps, with return 2252.8184112298795, Elapsed: 318.431204
+Reevaluate after: 753 steps, with return -758.5710729406861
+Reevaluate after: 804 steps, with return -525.511807430077
+Reevaluate after: 855 steps, with return 730.3253033109016
+Reevaluate after: 906 steps, with return -438.5454003283292
+Reevaluate after: 957 steps, with return 2141.459562856965
+Reevaluate after: 1008 steps, with return 1604.9545623800257
+Reevaluate after: 1059 steps, with return -188.53820289493035
+Reevaluate after: 1110 steps, with return -703.0375416008508
+Reevaluate after: 1161 steps, with return 1927.3845943619503
+Reevaluate after: 1212 steps, with return -1742.2794196633936
+Reevaluate after: 1263 steps, with return -461.80242629401783
+Reevaluate after: 1314 steps, with return 786.5112937595353
+Improvement after: 1320 steps, with return 2291.2132940915803, Elapsed: 591.553266
+Improvement after: 1326 steps, with return 2340.0162199479114, Elapsed: 593.854138
+Improvement after: 1363 steps, with return 2513.528873390061, Elapsed: 610.41367
+Reevaluate after: 1414 steps, with return -830.2097894791407
+Reevaluate after: 1465 steps, with return -521.1441397893421
+Reevaluate after: 1516 steps, with return -537.8114285370608
+Reevaluate after: 1567 steps, with return -368.0937857960875
+Reevaluate after: 1618 steps, with return 275.40127727193004
+Reevaluate after: 1669 steps, with return -881.6384737172397
+Reevaluate after: 1720 steps, with return 1444.8238379459704
+Reevaluate after: 1771 steps, with return -431.03355884664126
+Reevaluate after: 1822 steps, with return -1858.3389986827563
+Reevaluate after: 1873 steps, with return -1334.8604846984301
+Reevaluate after: 1924 steps, with return 276.01545753376075
+Reevaluate after: 1975 steps, with return -288.2070342558421
+Reevaluate after: 2026 steps, with return -710.2514128713441
+Reevaluate after: 2077 steps, with return -554.2581759611111
+Reevaluate after: 2128 steps, with return -1075.3811549111745
+Reevaluate after: 2179 steps, with return -452.20717135189415
+Reevaluate after: 2230 steps, with return 1539.1484275434582
+Reevaluate after: 2281 steps, with return -774.9353695894109
+Reevaluate after: 2332 steps, with return 555.3699968521861
+Improvement after: 2375 steps, with return 1998.5106960616463, Elapsed: 1041.771371
+Reevaluate after: 2426 steps, with return 1159.0120471504226
+Reevaluate after: 2477 steps, with return 68.39704447237322
+Reevaluate after: 2528 steps, with return 332.91612495382276
+Reevaluate after: 2579 steps, with return 1128.6120607273733
+Reevaluate after: 2630 steps, with return 201.8426600948864
+Improvement after: 2653 steps, with return 2032.399475414683, Elapsed: 1160.223959
+Improvement after: 2694 steps, with return 2114.801967786358, Elapsed: 1175.628323
+Improvement after: 2716 steps, with return 2279.84771222604, Elapsed: 1185.700565
+Improvement after: 2734 steps, with return 2392.968236872092, Elapsed: 1192.831928
+Reevaluate after: 2785 steps, with return 569.3141196956499
+Reevaluate after: 2836 steps, with return 1207.5559968911161
+Reevaluate after: 2887 steps, with return -535.9471539350046
+Reevaluate after: 2938 steps, with return -340.9587977829618
+Improvement after: 2970 steps, with return 2362.506632774185, Elapsed: 1293.966512
+Reevaluate after: 3021 steps, with return -392.2956932288816
+Reevaluate after: 3072 steps, with return 285.7965761284283
+Improvement after: 3086 steps, with return 2357.7150841062426, Elapsed: 1343.178861
+Reevaluate after: 3137 steps, with return -833.8923471042178
+Reevaluate after: 3188 steps, with return -811.8748097974502
+Reevaluate after: 3239 steps, with return -458.7014731982795
+Reevaluate after: 3290 steps, with return 1344.8177187332094
+Reevaluate after: 3341 steps, with return 301.80649399784267
+Reevaluate after: 3392 steps, with return -469.85153635831955
+Reevaluate after: 3443 steps, with return -2344.205041912861
+Reevaluate after: 3494 steps, with return -1221.894611855805
+Improvement after: 3514 steps, with return 2666.17405398862, Elapsed: 1529.852888
+Reevaluate after: 3565 steps, with return -1360.2017838674533
+Reevaluate after: 3616 steps, with return -1092.0438006781478
+Reevaluate after: 3667 steps, with return -296.85214793861746
+Reevaluate after: 3718 steps, with return -312.8992576700863
+Improvement after: 3735 steps, with return 2354.215641502644, Elapsed: 1623.454675
+Reevaluate after: 3786 steps, with return -59.77090752644839
+Reevaluate after: 3837 steps, with return 981.7882092443066
+Reevaluate after: 3888 steps, with return -521.3938536961572
+Reevaluate after: 3939 steps, with return -719.7852102847289
+Reevaluate after: 3990 steps, with return 1526.5023440597022
+Reevaluate after: 4041 steps, with return -108.27050518412514
+Improvement after: 4057 steps, with return 2478.2173785700857, Elapsed: 1762.303479
+Improvement after: 4063 steps, with return 3164.9592840925548, Elapsed: 1764.60089
+Reevaluate after: 4114 steps, with return -1297.224979052048
+Reevaluate after: 4165 steps, with return -1029.7982142120195
+Reevaluate after: 4216 steps, with return -508.8068609005853
+Reevaluate after: 4267 steps, with return -639.7226541369422
+Reevaluate after: 4318 steps, with return -318.3653256346436
+Reevaluate after: 4369 steps, with return 2169.9526167391596
+Reevaluate after: 4420 steps, with return -481.47813794121555
+Reevaluate after: 4471 steps, with return -92.08468178740034
+Reevaluate after: 4522 steps, with return -628.0684612168311
+Reevaluate after: 4573 steps, with return -287.96809368537595
+Reevaluate after: 4624 steps, with return -295.541611687696
+Reevaluate after: 4675 steps, with return -591.7968589681707
+Reevaluate after: 4726 steps, with return -397.22342237471037
+Reevaluate after: 4777 steps, with return 1102.9618170858218
+Reevaluate after: 4828 steps, with return -1246.1698333170773
+Reevaluate after: 4879 steps, with return 677.4531641654497
+Reevaluate after: 4930 steps, with return -416.8681805262231
+Reevaluate after: 4981 steps, with return -589.2816926353602
+Reevaluate after: 5032 steps, with return 567.3572562379147
+Reevaluate after: 5083 steps, with return -593.2180731373772
+Reevaluate after: 5134 steps, with return 1685.6642911238418
+Reevaluate after: 5185 steps, with return -381.9453420989618
+Reevaluate after: 5236 steps, with return -463.6983394617613
+Reevaluate after: 5287 steps, with return -584.4593052160869
+Reevaluate after: 5338 steps, with return -45.7992607916667
+Reevaluate after: 5389 steps, with return 296.2928812318988
+Reevaluate after: 5440 steps, with return -490.648663675863
+Reevaluate after: 5491 steps, with return -174.96104877206687
+Reevaluate after: 5542 steps, with return -1480.846901998335
+Reevaluate after: 5593 steps, with return 936.7664078485483
+Improvement after: 5606 steps, with return 2370.1592980263526, Elapsed: 2435.213965
+Improvement after: 5617 steps, with return 2422.0967085506677, Elapsed: 2439.595356
+Reevaluate after: 5668 steps, with return -404.99261692812746
+Reevaluate after: 5719 steps, with return -349.1948852890322
+Reevaluate after: 5770 steps, with return -515.8054444494348
+Reevaluate after: 5821 steps, with return -1675.1567341615314
+Reevaluate after: 5872 steps, with return 142.70412159651426
+Reevaluate after: 5923 steps, with return -6.525644979172165
+Reevaluate after: 5974 steps, with return -1012.1267169492818
+Reevaluate after: 6025 steps, with return 1365.228107628907
+Reevaluate after: 6076 steps, with return -672.325237455889
+Reevaluate after: 6127 steps, with return 1091.3366807752138
+Reevaluate after: 6178 steps, with return -1170.405402417116
+Reevaluate after: 6229 steps, with return -1057.2614477860714
+Reevaluate after: 6280 steps, with return 375.1085498244277
+Reevaluate after: 6331 steps, with return -764.7270417058859
+Improvement after: 6333 steps, with return 2248.1519792574113, Elapsed: 2753.375428
+Reevaluate after: 6384 steps, with return -1889.1879644621677
+Reevaluate after: 6435 steps, with return 926.4481998852025
+Reevaluate after: 6486 steps, with return 824.2860024645208
+Reevaluate after: 6537 steps, with return 604.1078431940639
+Reevaluate after: 6588 steps, with return -230.4338187997054
+Reevaluate after: 6639 steps, with return -1402.707034524624
+Reevaluate after: 6690 steps, with return 964.9171311483333
+Reevaluate after: 6741 steps, with return 1096.4018539093463
+Reevaluate after: 6792 steps, with return 1075.3433540116941
+Reevaluate after: 6843 steps, with return 1428.3647190408876
+Reevaluate after: 6894 steps, with return -1676.562766217333
+Reevaluate after: 6945 steps, with return -541.7347224812872
+Reevaluate after: 6996 steps, with return -161.51285555007502
+Reevaluate after: 7047 steps, with return 1917.4175943209143
+Reevaluate after: 7098 steps, with return -904.5314943334179
+Reevaluate after: 7149 steps, with return 801.8530057242098
+Reevaluate after: 7200 steps, with return -1061.3704924938281
+Improvement after: 7204 steps, with return 1706.3518306004648, Elapsed: 3137.220323
+Improvement after: 7217 steps, with return 1897.827254642439, Elapsed: 3142.17783
+Improvement after: 7257 steps, with return 1924.4098817303734, Elapsed: 3160.1655
+Reevaluate after: 7308 steps, with return -308.8601705418364
+Improvement after: 7310 steps, with return 2026.26955680698, Elapsed: 3183.469117
+Reevaluate after: 7361 steps, with return 877.7202423759129
+Improvement after: 7368 steps, with return 2030.3644031229117, Elapsed: 3208.721553
+Reevaluate after: 7419 steps, with return 553.9030240849222
+Reevaluate after: 7470 steps, with return -776.164450524217
+Reevaluate after: 7521 steps, with return 1356.5134068571392
+Reevaluate after: 7572 steps, with return 676.4928282570856
+Reevaluate after: 7623 steps, with return -267.23155919513755
+Reevaluate after: 7674 steps, with return 1007.6837283162082
+Reevaluate after: 7725 steps, with return -1127.1263500680343
+Reevaluate after: 7776 steps, with return 927.8693378895047
+Reevaluate after: 7827 steps, with return -592.7431038747333
+Reevaluate after: 7878 steps, with return 221.25011705025017
+Reevaluate after: 7929 steps, with return -1288.6225705736365
+Reevaluate after: 7980 steps, with return -1328.0238965059057
+Reevaluate after: 8031 steps, with return 992.7475176237301
+Reevaluate after: 8082 steps, with return 1103.576120937343
+Reevaluate after: 8133 steps, with return -465.38838403402144
+Reevaluate after: 8184 steps, with return -1013.3771702680951
+Reevaluate after: 8235 steps, with return 1708.0557711379302
+Reevaluate after: 8286 steps, with return -2095.2123714516883
+Reevaluate after: 8337 steps, with return -315.3428440060334
+Improvement after: 8345 steps, with return 2273.4707280947055, Elapsed: 3643.457837
+Reevaluate after: 8396 steps, with return -512.7598824133196
+Reevaluate after: 8447 steps, with return -623.5323570849233
+Reevaluate after: 8498 steps, with return -629.1406800572959
+Reevaluate after: 8549 steps, with return -136.9904502191447
+Improvement after: 8591 steps, with return 2678.2765823968325, Elapsed: 3752.878189
+Reevaluate after: 8642 steps, with return -330.1676864251029
+Reevaluate after: 8693 steps, with return 560.0218831498787
+Reevaluate after: 8744 steps, with return -496.08702245812157
+Reevaluate after: 8795 steps, with return -4124.729030778604
+Reevaluate after: 8846 steps, with return 2400.425577087466
+Improvement after: 8857 steps, with return 2232.722993031771, Elapsed: 3872.571773
+Reevaluate after: 8908 steps, with return -889.2369960387701
+Reevaluate after: 8959 steps, with return -80.49282503456402
+Reevaluate after: 9010 steps, with return 1014.0937641562523
+Reevaluate after: 9061 steps, with return -1226.1343694513916
+Reevaluate after: 9112 steps, with return -1263.4100731062995
+Reevaluate after: 9163 steps, with return 1215.8117416972084
+Reevaluate after: 9214 steps, with return 17.153323033395782
+Reevaluate after: 9265 steps, with return -886.7161714110096
+Reevaluate after: 9316 steps, with return -708.7115338846913
+Reevaluate after: 9367 steps, with return -2046.413125185639
+Reevaluate after: 9418 steps, with return 764.2505399422464
+Reevaluate after: 9469 steps, with return -56.189933696993265
+Reevaluate after: 9520 steps, with return 387.11699435111893
+Reevaluate after: 9571 steps, with return -1255.615809059699
+Reevaluate after: 9622 steps, with return -502.2754210824467
+Reevaluate after: 9673 steps, with return -1107.6978232049955
+Reevaluate after: 9724 steps, with return -493.196486656266
+Reevaluate after: 9775 steps, with return -740.2845439298057
+Reevaluate after: 9826 steps, with return -1769.321189002446
+Reevaluate after: 9877 steps, with return -1062.5200897328264
+Reevaluate after: 9928 steps, with return 589.568022620462
+Reevaluate after: 9979 steps, with return 413.0487710902773
+Reevaluate after: 10030 steps, with return -805.6445303099348
+Reevaluate after: 10081 steps, with return -337.7634201522655
+Reevaluate after: 10132 steps, with return 595.6745439335891
+Reevaluate after: 10183 steps, with return -1020.0337897354115
+Reevaluate after: 10234 steps, with return -1892.6416659788356
+Reevaluate after: 10285 steps, with return -6485.465223412403
+Reevaluate after: 10336 steps, with return 1452.8419384569715
+Reevaluate after: 10387 steps, with return 216.86216823977665
+Reevaluate after: 10438 steps, with return -3067.652178385165
+Reevaluate after: 10489 steps, with return -463.3878450028145
+Reevaluate after: 10540 steps, with return -1587.5055322174392
+Reevaluate after: 10591 steps, with return -758.6927152247079
+Reevaluate after: 10642 steps, with return -821.7667827609191
+Reevaluate after: 10693 steps, with return -691.5197500407842
+Reevaluate after: 10744 steps, with return 11.760813628379179
+Reevaluate after: 10795 steps, with return 888.8852455715034
+Reevaluate after: 10846 steps, with return -847.4525820356852
+Reevaluate after: 10897 steps, with return -778.7869220102473
+Reevaluate after: 10948 steps, with return -896.0686520541528
+Reevaluate after: 10999 steps, with return -454.8664227994941
+Reevaluate after: 11050 steps, with return -144.930212470513
+Reevaluate after: 11101 steps, with return 1227.0476355158783
+Reevaluate after: 11152 steps, with return -251.73559565289216
+Reevaluate after: 11203 steps, with return 651.330800746456
+Reevaluate after: 11254 steps, with return -182.19842880005538
+Reevaluate after: 11305 steps, with return 1166.001977474821
+Reevaluate after: 11356 steps, with return 519.6689584936753
+Reevaluate after: 11407 steps, with return 950.5380439711083
+Reevaluate after: 11458 steps, with return 228.03151008427434
+Reevaluate after: 11509 steps, with return -690.6173613073645
+Reevaluate after: 11560 steps, with return -576.4210014940444
+Reevaluate after: 11611 steps, with return -600.6309124972643
+Reevaluate after: 11662 steps, with return -49.39659840056417
+Reevaluate after: 11713 steps, with return 571.2666484508902
+Reevaluate after: 11764 steps, with return -442.411183019485
+Reevaluate after: 11815 steps, with return -1052.1923337281924
+Reevaluate after: 11866 steps, with return -1045.134966851381
+Reevaluate after: 11917 steps, with return -2083.010515780353
+Reevaluate after: 11968 steps, with return 312.24355507070385
+Reevaluate after: 12019 steps, with return -908.0583634037572
+Reevaluate after: 12070 steps, with return 1188.2047087963017
+Reevaluate after: 12121 steps, with return 973.6856474904283
+Reevaluate after: 12172 steps, with return -839.0862300972174
+Reevaluate after: 12223 steps, with return 1317.549739756511
+Reevaluate after: 12274 steps, with return 1681.2716890829502
+Reevaluate after: 12325 steps, with return -312.32436515686743
+Reevaluate after: 12376 steps, with return -535.1903244583268
+Reevaluate after: 12427 steps, with return -603.1479585331754
+Reevaluate after: 12478 steps, with return -1065.1049398089497
+Improvement after: 12520 steps, with return 2387.0851224623502, Elapsed: 5488.329725
+Reevaluate after: 12571 steps, with return -754.278581257981
+Reevaluate after: 12622 steps, with return -1296.2225298702024
+Reevaluate after: 12673 steps, with return -588.7488680766388
+Improvement after: 12692 steps, with return 2494.2589764481913, Elapsed: 5563.125771
+Reevaluate after: 12743 steps, with return -329.4317844131
+Reevaluate after: 12794 steps, with return 221.3507883384353
+Reevaluate after: 12845 steps, with return 888.1743929825541
+Reevaluate after: 12896 steps, with return 887.5636932843685
+Reevaluate after: 12947 steps, with return 1104.6136819481985
+Reevaluate after: 12998 steps, with return 283.66210536312144
+Reevaluate after: 13049 steps, with return 650.0594597487492
+Reevaluate after: 13100 steps, with return -296.47520929206513
+Reevaluate after: 13151 steps, with return 398.4263731787457
+Reevaluate after: 13202 steps, with return -310.15610441713204
+Reevaluate after: 13253 steps, with return -588.5133805406741
+Reevaluate after: 13304 steps, with return -628.2522819953564
+Reevaluate after: 13355 steps, with return -1053.280751998001
+Reevaluate after: 13406 steps, with return -1342.185482337876
+Improvement after: 13440 steps, with return 2516.2208891949354, Elapsed: 5891.751685
+Reevaluate after: 13491 steps, with return 667.7288783903779
+Improvement after: 13541 steps, with return 2092.7156807921606, Elapsed: 5935.216024
+Reevaluate after: 13592 steps, with return 1229.2142979017606
+Reevaluate after: 13643 steps, with return -1019.1294874472045
+Reevaluate after: 13694 steps, with return -1486.3408246217964
+Reevaluate after: 13745 steps, with return 352.8256029457928
+Reevaluate after: 13796 steps, with return 64.70000762851825
+Reevaluate after: 13847 steps, with return -109.48421790815637
+Reevaluate after: 13898 steps, with return -570.7354415854503
+Reevaluate after: 13949 steps, with return 32.85500644639086
+Reevaluate after: 14000 steps, with return -1305.2996412862408
+Improvement after: 14017 steps, with return 2230.403212436041, Elapsed: 6147.71978
+Reevaluate after: 14068 steps, with return -788.264737544894
+Reevaluate after: 14119 steps, with return -1523.0286809591657
+Reevaluate after: 14170 steps, with return -962.0962026083344
+Reevaluate after: 14221 steps, with return 891.534523514154
+Reevaluate after: 14272 steps, with return -2147.9488876836012
+Improvement after: 14303 steps, with return 2315.5560741559034, Elapsed: 6274.986303
+Reevaluate after: 14354 steps, with return -1078.458597564335
+Reevaluate after: 14405 steps, with return -632.6471170441105
+Improvement after: 14422 steps, with return 1913.1494763013707, Elapsed: 6327.245643
+Reevaluate after: 14473 steps, with return -425.7721400199049
+Reevaluate after: 14524 steps, with return 879.6789588201849
+Improvement after: 14526 steps, with return 205.34328905004276, Elapsed: 6373.876189
+Improvement after: 14529 steps, with return 666.8046626996335, Elapsed: 6375.063617
+Improvement after: 14533 steps, with return 1137.4093978018366, Elapsed: 6376.693061
+Reevaluate after: 14584 steps, with return -408.5200147630576
+Improvement after: 14604 steps, with return 1113.1053337090564, Elapsed: 6409.384354
+Improvement after: 14645 steps, with return 1378.6011236002, Elapsed: 6425.940367
+Improvement after: 14658 steps, with return 1394.9367990014925, Elapsed: 6432.813001
+Improvement after: 14699 steps, with return 1862.4595702910688, Elapsed: 6448.714225
+Reevaluate after: 14750 steps, with return -304.76431044811613
+Improvement after: 14764 steps, with return 1521.12258063168, Elapsed: 6478.144567
+Reevaluate after: 14815 steps, with return 491.3928506760931
+Improvement after: 14824 steps, with return 1829.6689658662217, Elapsed: 6504.109364
+Improvement after: 14841 steps, with return 1869.8681515495598, Elapsed: 6510.668787
+Improvement after: 14891 steps, with return 1967.455389477746, Elapsed: 6531.887582
+Reevaluate after: 14942 steps, with return -1146.8084363758862
+Reevaluate after: 14993 steps, with return -1789.6698365988345
+Reevaluate after: 15044 steps, with return 376.81702067854275
+Reevaluate after: 15095 steps, with return 408.55068658456594
+Reevaluate after: 15146 steps, with return 794.9951489452053
+Reevaluate after: 15197 steps, with return 555.9325620767906
+Reevaluate after: 15248 steps, with return 973.2564741965127
+Reevaluate after: 15299 steps, with return 497.2844221038748
+Reevaluate after: 15350 steps, with return 7.664255819632473
+Reevaluate after: 15401 steps, with return 809.9840258474815
+Reevaluate after: 15452 steps, with return -915.8747702078335
+Reevaluate after: 15503 steps, with return 1062.3524934333802
+Reevaluate after: 15554 steps, with return -58.271264814074314
+Reevaluate after: 15605 steps, with return 646.0968693733101
+Reevaluate after: 15656 steps, with return 344.71032637598114
+Reevaluate after: 15707 steps, with return 898.760058885698
+Reevaluate after: 15758 steps, with return 541.5057043112246
+Reevaluate after: 15809 steps, with return 986.8865319003067
+Reevaluate after: 15860 steps, with return -51.37197551253089
+Reevaluate after: 15911 steps, with return 904.4337691682929
+Reevaluate after: 15962 steps, with return -919.5097898721936
+Reevaluate after: 16013 steps, with return -662.6237514284473
+Reevaluate after: 16064 steps, with return 552.4163215788719
+Reevaluate after: 16115 steps, with return 1015.0530274040684
+Reevaluate after: 16166 steps, with return 974.5290868368908
+Reevaluate after: 16217 steps, with return -1460.9349527805666
+Reevaluate after: 16268 steps, with return -220.37502308502638
+Reevaluate after: 16319 steps, with return -1480.3022391239276
+Reevaluate after: 16370 steps, with return 747.7578396186329
+Reevaluate after: 16421 steps, with return -42.67918473035715
+Reevaluate after: 16472 steps, with return 602.6542432674553
+Reevaluate after: 16523 steps, with return 591.6630026304441
+Reevaluate after: 16574 steps, with return -1968.7017765450805
+Reevaluate after: 16625 steps, with return 543.2326545942332
+Reevaluate after: 16676 steps, with return 266.28061514842557
+Reevaluate after: 16727 steps, with return -1978.8126755898497
+Reevaluate after: 16778 steps, with return -149.92313412026513
+Reevaluate after: 16829 steps, with return -217.94023504095716
+Reevaluate after: 16880 steps, with return -590.3554074056502
+Reevaluate after: 16931 steps, with return 394.37451636920343
+Reevaluate after: 16982 steps, with return -712.6944095606525
+Reevaluate after: 17033 steps, with return 680.2292110055569
+Reevaluate after: 17084 steps, with return 788.9988600017707
+Reevaluate after: 17135 steps, with return 19.2243001007802
+Reevaluate after: 17186 steps, with return 839.9338881127771
+Reevaluate after: 17237 steps, with return 398.9411760477649
+Reevaluate after: 17288 steps, with return -1433.0020372537465
+Reevaluate after: 17339 steps, with return 499.8288716669723
+Reevaluate after: 17390 steps, with return 675.4447538596485
+Reevaluate after: 17441 steps, with return -559.6657799551874
+Reevaluate after: 17492 steps, with return -401.0057969587748
+Reevaluate after: 17543 steps, with return -184.70264498872757
+Reevaluate after: 17594 steps, with return -241.96584975107413
+Reevaluate after: 17645 steps, with return -688.6191095019515
+Reevaluate after: 17696 steps, with return 978.0565810860547
+Reevaluate after: 17747 steps, with return 553.0498971929836
+Reevaluate after: 17798 steps, with return -72.0175050839972
+Reevaluate after: 17849 steps, with return -1138.098405558207
+Reevaluate after: 17900 steps, with return 1360.3361461924956
+Reevaluate after: 17951 steps, with return 944.4113571515088
+Reevaluate after: 18002 steps, with return 793.3519528028652
+Reevaluate after: 18053 steps, with return 939.6142133341066
+Reevaluate after: 18104 steps, with return 498.689351798325
+Reevaluate after: 18155 steps, with return 40.24605517700809
+Reevaluate after: 18206 steps, with return 740.1637373830779
+Reevaluate after: 18257 steps, with return -689.8110592224436
+Reevaluate after: 18308 steps, with return 574.8479261938595
+Reevaluate after: 18359 steps, with return -162.5551289689909
+Reevaluate after: 18410 steps, with return -57.06199210815506
+Reevaluate after: 18461 steps, with return -336.19028570602904
+Reevaluate after: 18512 steps, with return -1560.7186941441544
+Reevaluate after: 18563 steps, with return 132.16694144415663
+Reevaluate after: 18614 steps, with return 486.3386195257469
+Reevaluate after: 18665 steps, with return 944.691131698002
+Reevaluate after: 18716 steps, with return 389.5626784400643
+Reevaluate after: 18767 steps, with return 769.5713712940347
+Reevaluate after: 18818 steps, with return -4.985179954460378
+Reevaluate after: 18869 steps, with return -387.7672461663941
+Reevaluate after: 18920 steps, with return -253.30224971739835
+Reevaluate after: 18971 steps, with return -323.5153647125551
+Reevaluate after: 19022 steps, with return 209.26825663469526
+Reevaluate after: 19073 steps, with return -8645.073877134204
+Reevaluate after: 19124 steps, with return -0.7322620677277956
+Reevaluate after: 19175 steps, with return 1341.1082548044722
+Reevaluate after: 19226 steps, with return 1116.9597796423136
+Reevaluate after: 19277 steps, with return -262.8897163794912
+Reevaluate after: 19328 steps, with return 1064.1942935829652
+Reevaluate after: 19379 steps, with return 834.2926454259959
+Reevaluate after: 19430 steps, with return 142.38792200149342
+Reevaluate after: 19481 steps, with return 1449.9678273592715
+Reevaluate after: 19532 steps, with return 505.57762029553686
+Reevaluate after: 19583 steps, with return -56.70163670229399
+Reevaluate after: 19634 steps, with return 1159.279002549245
+Reevaluate after: 19685 steps, with return 181.86055017316954
+Reevaluate after: 19736 steps, with return 850.8658918032477
+Reevaluate after: 19787 steps, with return -312.81635102900464
+Reevaluate after: 19838 steps, with return -184.6032468567346
+Reevaluate after: 19889 steps, with return 899.0281539303775
+Reevaluate after: 19940 steps, with return -808.5302929894779
+Reevaluate after: 19991 steps, with return 243.0757936292799
+Total steps done: 20000
